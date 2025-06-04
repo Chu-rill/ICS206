@@ -1,0 +1,294 @@
+.programs-overview {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 3rem;
+}
+
+.program-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.program-card:hover {
+  transform: translateY(-10px);
+}
+
+.program-image img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.program-content {
+  padding: 2rem;
+}
+
+.program-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #2c5aa0;
+}
+
+.program-content p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.program-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.program-content ul li {
+  padding: 0.5rem 0;
+  color: #555;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.program-content ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #f39c12;
+  font-weight: bold;
+}
+
+/* Impact Data Section */
+.impact-data {
+  padding: 80px 0;
+}
+
+.impact-data h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #2c5aa0;
+}
+
+.impact-table {
+  margin: 2rem 0;
+}
+
+.impact-table th {
+  background: #2c5aa0;
+  color: white;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.impact-table td {
+  padding: 15px;
+  text-align: center;
+}
+
+.impact-table tr:nth-child(even) {
+  background: #f8f9fa;
+}
+
+.impact-table .total-row {
+  background: #e8f4f8 !important;
+  font-weight: 600;
+  border-top: 3px solid #2c5aa0;
+}
+
+/* Get Involved Section */
+.get-involved {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.get-involved h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #2c5aa0;
+}
+
+.involvement-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.step {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.step-number {
+  background: #f39c12;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 auto 1rem;
+}
+
+.step h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #2c5aa0;
+}
+
+.step p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.cta-section {
+  text-align: center;
+}
+
+/* Volunteer Form Section */
+.volunteer-form-section {
+  padding: 40px 0;
+  background: #e8f4f8;
+}
+
+.volunteer-form-section.show {
+  display: block !important;
+  animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.volunteer-form-section h3 {
+  text-align: center;
+  color: #2c5aa0;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.form-container {
+  max-width: 700px;
+  margin: 0 auto;
+  background: white;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #2c5aa0;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #2c5aa0;
+  box-shadow: 0 0 0 3px rgba(44, 90, 160, 0.1);
+}
+
+.checkbox-group,
+.radio-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.checkbox-group label,
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+/* Form Success Message */
+.success-message {
+  background: #d4edda;
+  color: #155724;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border: 1px solid #c3e6cb;
+  display: none;
+}
+
+.success-message.show {
+  display: block;
+  animation: slideDown 0.5s ease-out;
+}
+
+/* Responsive Design for Services Page */
+@media (max-width: 768px) {
+  .programs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .impact-data h2,
+  .get-involved h2 {
+    font-size: 2rem;
+  }
+
+  .involvement-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .table-container {
+    overflow-x: auto;
+  }
+
+  .impact-table {
+    min-width: 600px;
+  }
+
+  .checkbox-group,
+  .radio-group {
+    grid-template-columns: 1fr;
+  }
+
+  .form-container {
+    padding: 1.5rem;
+    margin: 0 1rem;
+  }
+}
