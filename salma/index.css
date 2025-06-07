@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #536372;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border: 1px solid #e9ecef;
+}
+
+.header {
+  background: #4a90e2;
+  color: white;
+  text-align: center;
+  padding: 25px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+thead {
+  background: #f1f5f9;
+}
+
+th {
+  padding: 15px 12px;
+  text-align: center;
+  font-weight: 600;
+  color: #334155;
+  border-bottom: 2px solid #e2e8f0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 12px;
+}
+
+tbody tr {
+  transition: all 0.2s ease;
+}
+
+tbody tr:nth-child(odd) {
+  background: #f8fafc;
+}
+
+tbody tr:nth-child(even) {
+  background: white;
+}
+
+tbody tr:hover {
+  background: #e0f2fe;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.course-code {
+  font-weight: bold;
+  color: #1e40af;
+  background: #eff6ff;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-family: "Courier New", monospace;
+}
+
+.course-title {
+  text-align: left;
+  font-weight: 500;
+  color: #374151;
+}
+
+.status-r {
+  background: #fef2f2;
+  color: #dc2626;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.status-c {
+  background: #f0fdf4;
+  color: #16a34a;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.reg-status {
+  background: #fef3c7;
+  color: #d97706;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.total-row {
+  background: #4a90e2 !important;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.total-row td {
+  padding: 15px;
+  border-top: 3px solid #3498db;
+}
+
+.credit-units {
+  font-weight: bold;
+  color: #6366f1;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 10px;
+  }
+
+  table {
+    font-size: 12px;
+  }
+
+  th,
+  td {
+    padding: 8px 6px;
+  }
+
+  .header {
+    font-size: 20px;
+    padding: 20px;
+  }
+}
