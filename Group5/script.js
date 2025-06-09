@@ -12,82 +12,52 @@ displauButton.addEventListener("click", function () {
     displauButton.textContent = "Show Volunteer Form";
   }
 });
-function submitVolunteerForm(event) {
-  event.preventDefault();
 
-  // Get form elements
-  const fullName = document.getElementById("fullName");
-  const email = document.getElementById("email");
-  const program = document.getElementById("program");
+const mainButton = document.querySelector(".submit-button");
 
-  let isValid = true;
+mainButton.addEventListener("click", function (event) {
+  function submitVolunteerForm(event) {
+    event.preventDefault();
 
-  // Clear previous error styles
-  clearErrors();
+    // Get form elements
+    const fullName = document.getElementById("fullName");
+    const email = document.getElementById("email");
+    const phone = document.getElementById("phone");
+    const program = document.getElementById("program");
+    const comments = document.getElementById("comments");
 
-  // Validate full name
-  if (!fullName.value.trim()) {
-    showError(fullName, "Full name is required");
-    isValid = false;
-  }
+    // Get checkbox values
+    const availabilityCheckboxes = document.querySelectorAll(
+      'input[name="availability"]:checked'
+    );
+    const availability = Array.from(availabilityCheckboxes).map(
+      (cb) => cb.value
+    );
 
-  // Validate email
-  if (!email.value.trim()) {
-    showError(email, "Email is required");
-    isValid = false;
-  } else if (!isValidEmail(email.value)) {
-    showError(email, "Please enter a valid email");
-    isValid = false;
-  }
+    // Get radio button value
+    const experienceRadio = document.querySelector(
+      'input[name="experience"]:checked'
+    );
+    const experience = experienceRadio ? experienceRadio.value : "Not selected";
 
-  // Validate program selection
-  if (!program.value) {
-    showError(program, "Please select a program");
-    isValid = false;
-  }
+    // Check if required fields are empty
+    if (!fullName.value.trim() || !email.value.trim() || !program.value) {
+      alert("Please fill in all required fields");
+      return;
+    }
 
-  // If form is valid, submit it
-  if (isValid) {
-    alert("Thank you! Your volunteer application has been submitted.");
+    // If all fields are filled, alert all values
+    alert(`Form submitted with:
+Full Name: ${fullName.value}
+Email: ${email.value}
+Phone: ${phone.value || "Not provided"}
+Program: ${program.value}
+Availability: ${
+      availability.length > 0 ? availability.join(", ") : "Not selected"
+    }
+Experience: ${experience}
+Comments: ${comments.value || "None"}`);
+
     document.getElementById("volunteerForm").reset();
   }
-}
-
-function showError(element, message) {
-  element.style.borderColor = "#e74c3c";
-
-  // Remove existing error message
-  const existingError = element.parentNode.querySelector(".error-message");
-  if (existingError) {
-    existingError.remove();
-  }
-
-  // Add new error message
-  const errorDiv = document.createElement("div");
-  errorDiv.className = "error-message";
-  errorDiv.textContent = message;
-  errorDiv.style.color = "#e74c3c";
-  errorDiv.style.fontSize = "14px";
-  errorDiv.style.marginTop = "5px";
-
-  element.parentNode.appendChild(errorDiv);
-}
-
-function clearErrors() {
-  // Reset border colors
-  const inputs = document.querySelectorAll(
-    "#volunteerForm input, #volunteerForm select"
-  );
-  inputs.forEach((input) => {
-    input.style.borderColor = "";
-  });
-
-  // Remove error messages
-  const errorMessages = document.querySelectorAll(".error-message");
-  errorMessages.forEach((error) => error.remove());
-}
-
-function isValidEmail(email) {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailRegex.test(email);
-}
+});
